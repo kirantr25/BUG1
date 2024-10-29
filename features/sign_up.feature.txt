@@ -1,0 +1,13 @@
+Feature: Magento Sign Up
+
+  Scenario: Successful sign-up
+    Given I am on the Magento sign-up page
+    When I enter valid user details
+    And I submit the form
+    Then I should see the account creation confirmation message
+
+  Scenario: Missing required fields
+    Given I am on the Magento sign-up page
+    When I leave the email field blank
+    And I submit the form
+    Then I should see the error message "Email required"
